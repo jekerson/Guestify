@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  api:
+    image: ${DOCKER_REGISTRY-}api
+    build:
+      context: .
+      dockerfile: src/API/Dockerfile
+    ports:
+    - "5000:5000"
+  
+  redis.cache:
+    image: redis:latest
+    restart: always
+    ports:
+    - "6379:6379"
