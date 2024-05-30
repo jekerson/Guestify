@@ -11,6 +11,8 @@ builder.Services
 
 builder.Services.AddControllers();
 
+builder.Services.AddProblemDetails();
+
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
